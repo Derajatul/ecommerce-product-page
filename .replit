@@ -82,3 +82,6 @@ deploymentTarget = "cloudrun"
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", ".config"]
