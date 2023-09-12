@@ -12,6 +12,7 @@ interface Product {
   name: string;
   price: number;
   amount: number;
+  img: string;
   // tambahkan properti lain sesuai kebutuhan
 }
 
