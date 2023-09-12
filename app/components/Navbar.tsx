@@ -17,8 +17,13 @@ interface Product {
 
 
 const Nav = () => {
-  const {cart}: {cart: Product[]} = useCart()
+  const { cart, handleCart }: { cart: Product[]; handleCart: (cart: Product[]) => void } = useCart();
   const [isInvisible, setIsInvisible] = useState(false);
+
+  const handleDelete = (productToRemove) => {
+    const updatedCart = cart.filter((item) => item.product !== productToRemove);
+    handleCart(updatedCart);
+  }
 
   
   return(
@@ -77,31 +82,21 @@ const Nav = () => {
             <DropdownItem isReadOnly >
               {cart.length <= 0 ? 
                 <p className="text-darkGrayishBlue text-base">Cart is empty</p> :
-                <div className="flex gap-5 items-center">
+                <div>
+                <div className="flex gap-5 items-center mb-2">
                   <Image src={cart[0].img} width={50} height={50} alt="" className="rounded-md"/>    
                   <div >
                     <p className="text-darkGrayishBlue text-base">{cart[0].product}</p>
                     <p className="text-darkGrayishBlue text-base">${cart[0].price / cart[0].amount} x {cart.map(c => c.amount).reduce((a,b) => a + b,0)} <span className="font-bold">${cart.map(c => c.price).reduce((a,b) => a+b,0)}</span></p>
                   </div>
-                  
-                </div>
-              }
-            </DropdownItem>
-
-            {cart.length <= 0 ? <></> : 
-              (
-                <DropdownItem>
+                  <button onClick={() => handleDelete(cart[0].product)}><Image src="/icons/icon-delete.svg" width={30} height={30} alt="delete" /></button>
+                  </div>
                   <Button color="primary" fullWidth>
                     Checkout
                   </Button>
-                </DropdownItem>
-            )}
-
-            
-              
-              
-            
-            
+                </div>
+              }
+            </DropdownItem>        
           </DropdownMenu>
         </Dropdown>
         
