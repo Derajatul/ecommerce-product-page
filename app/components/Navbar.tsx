@@ -20,7 +20,7 @@ const Nav = () => {
   const { cart, handleCart }: { cart: Product[]; handleCart: (cart: Product[]) => void } = useCart();
   const [isInvisible, setIsInvisible] = useState(false);
 
-  const handleDelete = (productToRemove) => {
+  const handleDelete = (productToRemove: string) => {
     const updatedCart = cart.filter((item) => item.product !== productToRemove);
     handleCart(updatedCart);
   }
