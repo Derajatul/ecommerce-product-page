@@ -88,7 +88,7 @@ const Nav = () => {
               }
             </DropdownItem>
 
-            {cart.length <= 0 ? null : 
+            {cart.length <= 0 ? <></> : 
               (
                 <DropdownItem>
                   <Button color="primary" fullWidth>
