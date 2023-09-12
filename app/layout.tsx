@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="light" >
-          <Providers suppressHydrationWarning>
+          <Providers>
       
         <body className={kumbh.className}>
             <CartProvider>
@@ -28,6 +28,9 @@ export default function RootLayout({
               <main className="max-w-5xl w-full sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-32">
                 {children}
               </main>
+              <footer className="max-w-5xl w-full h-[60px] flex items-center justify-center mt-6">
+                <p>Derajatul © 2023</p>
+              </footer>
             </CartProvider>
         </body>
           </Providers>        
