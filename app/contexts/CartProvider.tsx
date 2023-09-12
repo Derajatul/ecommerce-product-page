@@ -2,15 +2,25 @@
 
 import { createContext, useContext, useState } from 'react'
 
-export const CartContext = createContext({ cart: 0, handleCart: (cart: number) => {} })
+export const CartContext = createContext<{
+  cart: Product[];
+  handleCart: (cart: Product[]) => void;
+}>({ cart: [], handleCart: () => {} });
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  // tambahkan properti lain sesuai kebutuhan
+}
 
 export const CartProvider = ({children}:{children:React.ReactNode}) => {
-  const [cart,setCart] = useState([])
-  const handleCart = (cart:number) => {
-    setCart(cart)
-  }
+  const [cart, setCart] = useState<Product[]>([]);
+  const handleCart = (newCart: Product) => {
+  setCart((prevCart) => [...prevCart, newCart]);
+}
   return(
-    <CartContext.Provider value={{cart,handleCart}}>
+    <CartContext.Provider value={{cart, handleCart}}>
       {children}
     </CartContext.Provider>
   )
