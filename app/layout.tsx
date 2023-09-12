@@ -22,7 +22,7 @@ export default function RootLayout({
       
         <body className={kumbh.className}>
             <CartProvider>
-              <header className="max-w-5xl w-full mb-10">
+              <header className="max-w-5xl w-full sm:mb-10">
                 <Nav />
               </header>
               <main className="max-w-5xl w-full sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-32">
