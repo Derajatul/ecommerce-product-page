@@ -6,6 +6,7 @@ import {Chip} from "@nextui-org/react";
 import {Button} from "@nextui-org/react";
 import {useCart} from './contexts/CartProvider';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Swal from 'sweetalert2'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -22,7 +23,7 @@ export default function Home() {
     <>
       
       <div className="lg:inline-block sm:w-[425px] lg:col-span-1">
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper sm:rounded-xl" >
+        <Swiper navigation modules={[Navigation]} className="mySwiper sm:rounded-xl" >
           <SwiperSlide>
             <Image src="/img/image-product-1.jpg" width={300} height={300} style={{width:'100%',height:'auto'}} alt='' />
           </SwiperSlide>
@@ -67,10 +68,23 @@ export default function Home() {
           <Button 
             fullWidth 
             color="primary"
-            onClick={() => handleCart([
-              ...cart,
-              {product: "Fall Limited Edition Sneakers", price: 125 * amount,amount:amount,img: "/img/image-product-1-thumbnail.jpg"}
-            ])}
+            onClick={() => {
+              handleCart([
+                ...cart,
+                { 
+                  product: "Fall Limited Edition Sneakers",
+                  price: 125 * amount,
+                  amount: amount,
+                  img: "/img/image-product-1-thumbnail.jpg"
+                }
+              ]);
+              
+              Swal.fire({
+                title: 'Success',
+                text: `Successfully added ${amount} item to cart`,
+                icon: 'success',
+              });
+            }}
             >
               Add to cart
           </Button>
