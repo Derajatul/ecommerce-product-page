@@ -17,7 +17,7 @@ import { Navigation } from 'swiper/modules';
 
 
 export default function Home() {
-  const {cart, handleCart} = useCart()
+  const {cart, handleCart}: {cart: number, handleCart: (cart:number) => {}} = useCart()
   const [amount,setAmount] = useState(1)
   return(
     <>
