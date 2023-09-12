@@ -8,8 +8,7 @@ export const CartContext = createContext<{
 }>({ cart: [], handleCart: () => {} });
 
 interface Product {
-  id: number;
-  name: string;
+  product: string;
   price: number;
   amount: number;
   img: string;
@@ -18,8 +17,8 @@ interface Product {
 
 export const CartProvider = ({children}:{children:React.ReactNode}) => {
   const [cart, setCart] = useState<Product[]>([]);
-  const handleCart = (newCart: Product) => {
-  setCart((prevCart) => [...prevCart, newCart]);
+  const handleCart = (newCart: Product[]) => {
+  setCart(newCart);
 }
   return(
     <CartContext.Provider value={{cart, handleCart}}>

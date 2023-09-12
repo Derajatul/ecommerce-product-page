@@ -7,8 +7,17 @@ import {Logo} from './Logo'
 import {useState} from 'react'
 import {useCart} from '../contexts/CartProvider'
 
+interface Product {
+  product: string;
+  price: number;
+  amount: number;
+  img: string;
+  // tambahkan properti lain sesuai kebutuhan
+}
+
+
 const Nav = () => {
-  const {cart,handleCart} = useCart()
+  const {cart}: {cart: Product[]} = useCart()
   const [isInvisible, setIsInvisible] = useState(false);
 
   

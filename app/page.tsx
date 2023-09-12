@@ -15,9 +15,18 @@ import 'swiper/css/navigation';
 // import required modules
 import { Navigation } from 'swiper/modules';
 
+interface Product {
+  product: string;
+  price: number;
+  amount: number;
+  img: string;
+  // tambahkan properti lain sesuai kebutuhan
+}
+
+
 
 export default function Home() {
-  const {cart, handleCart}: {cart: number, handleCart: (cart:number) => {}} = useCart()
+  const {cart, handleCart}: { cart: Product[]; handleCart: (cart: Product[]) => void } = useCart()
   const [amount,setAmount] = useState(1)
   return(
     <>
