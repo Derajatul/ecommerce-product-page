@@ -18,16 +18,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="light" >
+          <Providers suppressHydrationWarning>
+      
         <body className={kumbh.className}>
-          <Providers>
             <CartProvider>
-              <Nav />
-              <main className="max-w-5xl w-full sm:px-6">
+              <header className="max-w-5xl w-full mb-10">
+                <Nav />
+              </header>
+              <main className="max-w-5xl w-full sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-32">
                 {children}
               </main>
             </CartProvider>
-          </Providers>        
         </body>
+          </Providers>        
+            
     </html>
   )
 }

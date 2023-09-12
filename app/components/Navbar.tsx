@@ -72,7 +72,7 @@ const Nav = () => {
                   <Image src={cart[0].img} width={50} height={50} alt="" className="rounded-md"/>    
                   <div >
                     <p className="text-darkGrayishBlue text-base">{cart[0].product}</p>
-                    <p className="text-darkGrayishBlue text-base">${cart[0].price} x {cart.map(c => c.amount).reduce((a,b) => a + b,0)} <span className="font-bold">${cart.map(c => c.price).reduce((a,b) => a+b,0)}</span></p>
+                    <p className="text-darkGrayishBlue text-base">${cart[0].price / cart[0].amount} x {cart.map(c => c.amount).reduce((a,b) => a + b,0)} <span className="font-bold">${cart.map(c => c.price).reduce((a,b) => a+b,0)}</span></p>
                   </div>
                   
                 </div>
