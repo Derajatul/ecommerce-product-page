@@ -11,6 +11,7 @@ interface Product {
   id: number;
   name: string;
   price: number;
+  amount: number;
   // tambahkan properti lain sesuai kebutuhan
 }
 
