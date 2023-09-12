@@ -1,9 +1,10 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
-import {Providers} from "./contextscontexts/providers";
+import { Kumbh_Sans } from 'next/font/google'
+import {Providers} from "./contexts/providers";
+import {CartProvider} from './contexts/CartProvider'
 import Nav from './components/Navbar'
 
-const inter = Inter({ subsets: ['latin'] })
+const kumbh = Kumbh_Sans({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -16,12 +17,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="light">
-        <body className={inter.className}>
-          <providers> 
-            <Nav />
-            {children}
-          </providers>  
+    <html lang="en" className="light" >
+        <body className={kumbh.className}>
+          <Providers>
+            <CartProvider>
+              <Nav />
+              <main className="max-w-5xl w-full sm:px-6">
+                {children}
+              </main>
+            </CartProvider>
+          </Providers>        
         </body>
     </html>
   )
