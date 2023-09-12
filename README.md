@@ -1,24 +1,24 @@
-Welcome to the NextJS base template bootstrapped using the `create-next-app`. This template supports TypeScript, but you can use normal JavaScript as well.
+# E-Commerce Section Page
 
-## Getting Started
+Ini adalah solusi untuk tantangan Frontend Mentor dan The Odin Project untuk membuat halaman e-commerce section. Halaman ini memungkinkan pengguna untuk menambahkan barang ke keranjang dan responsif.
 
-Hit the run button to start the development server.
+## Demo
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Anda dapat melihat demo langsung dari proyek ini [di sini](https://ecommerce-product-page-pi-hazel.vercel.app/).
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on `/api/hello`. This endpoint can be edited in `pages/api/hello.ts`.
+## Fitur
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Proyek ini memiliki beberapa fitur utama:
 
-## Learn More
+- Menambahkan barang ke keranjang
+- Menghapus barang
+- Responsif
 
-To learn more about Next.js, take a look at the following resources:
+## Teknologi yang Digunakan
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Proyek ini dibangun dengan menggunakan teknologi-teknologi berikut:
 
-## Productionizing your Next App
-
-To make your next App run smoothly in production make sure to [turn this repl to an always-on repl.](https://docs.replit.com/hosting/enabling-always-on)
-
-You can also produce a production build by running `npm run build` and [changing the run command](https://docs.replit.com/programming-ide/configuring-repl#run) to `npm run start`.
+- React
+- Nextjs
+- tailwindcss
+  
